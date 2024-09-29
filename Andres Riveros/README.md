@@ -1,9 +1,0 @@
-# PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-
-PROGRAMACIÓN PARA VIDEOJUEGOS - (213027A_1704)
-
-# Andres Riveros
-
-![Andres Riveros](Foto de Perfil UNAD.jpeg)
-**Rol:** Artista De personajes 
-
-soy de Bogota colombia , me encantan los videojuegos y las historias que esto pueden contar,estudio ingenieria multimedia y actualmente soy nada mas estudiante. 
