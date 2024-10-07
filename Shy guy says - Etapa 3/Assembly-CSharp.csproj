@@ -60,8 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\ControladorBanderas.cs" />
     <Compile Include="Assets\Scripts\JugadorController.cs" />
     <Compile Include="Assets\Scripts\ShyGuyController.cs" />
+    <Compile Include="Assets\Scripts\CamaraFija.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
