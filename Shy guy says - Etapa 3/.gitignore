@@ -6,12 +6,13 @@
 [Bb]uilds/
 [Ll]ogs/
 [Uu]serSettings/
-
+ 
 # Archivos generados de builds
 *.apk
 *.unitypackage
 *.app
-
+ 
 # Archivos de sistema
 .DS_Store
 Thumbs.db
+ 

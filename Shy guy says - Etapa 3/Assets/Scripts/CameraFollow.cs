@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class PlayerCamera : MonoBehaviour
 {
     public Transform target; // El objeto vacío detrás del Shy Guy
     public Transform secondaryTarget; // El jugador frente al Shy Guy
     public Vector3 offset; // Ajusta esto para posicionar la cámara
 
-    void LateUpdate()
+    void StartFollowing()
     {
         // Posiciona la cámara detrás del objeto vacío
         transform.position = target.position + offset;
