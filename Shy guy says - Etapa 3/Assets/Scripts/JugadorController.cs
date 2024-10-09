@@ -60,7 +60,7 @@ public class JugadorController : MonoBehaviour
         float tiempoCaida = 0f;
         while (tiempoCaida < 2f)
         {
-            transform.position += Vector3.down * Time.deltaTime * 0.5f; // Ajusta la velocidad según sea necesario
+            transform.position += Vector3.down * Time.deltaTime * 2f; // Ajusta la velocidad según sea necesario
             tiempoCaida += Time.deltaTime;
             yield return null;
         }
