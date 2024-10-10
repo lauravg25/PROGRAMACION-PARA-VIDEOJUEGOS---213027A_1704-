@@ -406,8 +406,6 @@ Transform:
   m_Children:
   - {fileID: 245950197}
   - {fileID: 1372655480}
-  - {fileID: 1469345977}
-  - {fileID: 339684237}
   - {fileID: 1075359245}
   - {fileID: 1479153163}
   m_Father: {fileID: 1395348869}
@@ -608,10 +606,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6095755043422354155, guid: 4702ac9e34e5f4549be2d0acc2f00dae, type: 3}
-      propertyPath: m_Name
-      value: Character_Male_7
-      objectReference: {fileID: 0}
     - target: {fileID: 3603275944440257335, guid: 4702ac9e34e5f4549be2d0acc2f00dae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.688
@@ -652,6 +646,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6095755043422354155, guid: 4702ac9e34e5f4549be2d0acc2f00dae, type: 3}
+      propertyPath: m_Name
+      value: Character_Male_7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -661,10 +659,10 @@ PrefabInstance:
       addedObject: {fileID: 243636944}
     - targetCorrespondingSourceObject: {fileID: 6095755043422354155, guid: 4702ac9e34e5f4549be2d0acc2f00dae, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 243636943}
+      addedObject: {fileID: 243636942}
     - targetCorrespondingSourceObject: {fileID: 6095755043422354155, guid: 4702ac9e34e5f4549be2d0acc2f00dae, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 243636942}
+      addedObject: {fileID: 243636946}
   m_SourcePrefab: {fileID: 100100000, guid: 4702ac9e34e5f4549be2d0acc2f00dae, type: 3}
 --- !u!1 &243636941 stripped
 GameObject:
@@ -698,23 +696,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &243636943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243636941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21712d6153882d94ba52f4eb822049cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  banderaIzquierda: {fileID: 1469345976}
-  banderaDerecha: {fileID: 339684236}
-  banderaJugadorIzquierda: {fileID: 1703194169}
-  banderaJugadorDerecha: {fileID: 987506289}
-  shyGuy: {fileID: 1372655479}
 --- !u!65 &243636944
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -736,6 +717,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &243636946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243636941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21712d6153882d94ba52f4eb822049cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  banderaIzquierda: {fileID: 1469345976}
+  banderaDerecha: {fileID: 339684236}
+  banderaJugadorIzquierda: {fileID: 998108096}
+  banderaJugadorDerecha: {fileID: 425253883}
+  shyGuy: {fileID: 1115637960}
 --- !u!1 &245950196
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,7 +976,7 @@ Transform:
   m_LocalScale: {x: 0.5168281, y: 0.55227596, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 114160351}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 186.379, z: 0}
 --- !u!65 &339684238
 BoxCollider:
@@ -1064,7 +1062,7 @@ GameObject:
   - component: {fileID: 425253885}
   - component: {fileID: 425253884}
   m_Layer: 0
-  m_Name: BanderaJugadorDerecha (1)
+  m_Name: BanderaJugadorDerecha(1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1726,7 +1724,7 @@ GameObject:
   - component: {fileID: 987506291}
   - component: {fileID: 987506290}
   m_Layer: 0
-  m_Name: BanderaJugadorDerecha (2)
+  m_Name: BanderaJugadorDerecha(2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1895,7 +1893,7 @@ GameObject:
   - component: {fileID: 998108098}
   - component: {fileID: 998108097}
   m_Layer: 0
-  m_Name: BanderaJugadorIzquierda (1)
+  m_Name: BanderaJugadorIzquierda(1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2621,12 +2619,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469345976}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.56, y: -0.06, z: -4.89}
   m_LocalScale: {x: 0.5168281, y: 0.552276, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 114160351}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1469345978
 BoxCollider:
@@ -2817,7 +2815,7 @@ GameObject:
   - component: {fileID: 1703194171}
   - component: {fileID: 1703194170}
   m_Layer: 0
-  m_Name: BanderaJugadorIzquierda (2)
+  m_Name: BanderaJugadorIzquierda(2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3051,3 +3049,5 @@ SceneRoots:
   - {fileID: 998108100}
   - {fileID: 559919549}
   - {fileID: 213617801}
+  - {fileID: 1469345977}
+  - {fileID: 339684237}
