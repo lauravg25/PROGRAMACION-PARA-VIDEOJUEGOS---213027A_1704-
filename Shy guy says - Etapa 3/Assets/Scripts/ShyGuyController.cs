@@ -1,20 +1,38 @@
 using UnityEngine;
 
-public class ShyGuyController : MonoBehaviour
+public class ShyguyController : MonoBehaviour
 {
-    public GameObject banderaIzquierda;
-    public GameObject banderaDerecha;
-    public bool levantarIzquierda; // Cambiado a public
+    public GameObject banderaRoja;
+    public GameObject banderaBlanca;
+    public AIController[] aiControllers; // Referencias a los personajes AI
 
-    void Start()
+    private void Start()
     {
-        InvokeRepeating("CambiarBandera", 2.0f, 2.0f);
+        InvokeRepeating("MostrarBanderaAleatoria", 2f, 3f);
     }
 
-    void CambiarBandera()
+    void MostrarBanderaAleatoria()
     {
-        levantarIzquierda = !levantarIzquierda;
-        banderaIzquierda.SetActive(levantarIzquierda);
-        banderaDerecha.SetActive(!levantarIzquierda);
+        banderaRoja.SetActive(false);
+        banderaBlanca.SetActive(false);
+
+        int bandera = Random.Range(0, 2);
+
+        if (bandera == 0)
+        {
+            banderaRoja.SetActive(true);
+        }
+        else
+        {
+            banderaBlanca.SetActive(true);
+        }
+
+        foreach (var ai in aiControllers)
+        {
+            if (ai != null)
+            {
+                ai.ReaccionarABandera(); // Cambia esta línea para llamar al método correcto
+            }
+        }
     }
 }
