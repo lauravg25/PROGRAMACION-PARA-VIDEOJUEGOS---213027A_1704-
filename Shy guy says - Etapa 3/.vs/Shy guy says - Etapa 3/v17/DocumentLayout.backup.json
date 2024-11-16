@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\AIController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\AIController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\ShyGuyController1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ShyGuyController1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\GameManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\GameManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\JugadorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\JugadorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,11 +46,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AIController.cs",
+              "DocumentMoniker": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\AIController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AIController.cs",
+              "ToolTip": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\AIController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AIController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAUwCwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T01:38:50.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T01:38:16.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ShyGuyController1.cs",
+              "DocumentMoniker": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\ShyGuyController1.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ShyGuyController1.cs",
+              "ToolTip": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\ShyGuyController1.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ShyGuyController1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T01:32:44.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T01:30:31.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "CamaraFija.cs",
               "DocumentMoniker": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\CamaraFija.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CamaraFija.cs",
@@ -46,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "CameraFollow.cs",
               "DocumentMoniker": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\CameraFollow.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CameraFollow.cs",
@@ -58,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "ControladorBanderas.cs",
               "DocumentMoniker": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\ControladorBanderas.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ControladorBanderas.cs",
@@ -70,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ShyGuyController.cs",
               "DocumentMoniker": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\ShyGuyController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ShyGuyController.cs",
@@ -78,18 +146,17 @@
               "RelativeToolTip": "Assets\\Scripts\\ShyGuyController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T19:47:00.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-29T19:47:00.766Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "JugadorController.cs",
               "DocumentMoniker": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\JugadorController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\JugadorController.cs",
               "ToolTip": "C:\\Users\\Laura\\PROGRAMACION-PARA-VIDEOJUEGOS---213027A_1704-\\Shy guy says - Etapa 3\\Assets\\Scripts\\JugadorController.cs",
               "RelativeToolTip": "Assets\\Scripts\\JugadorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAEwC4AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-29T19:44:29.212Z",
               "EditorCaption": ""
