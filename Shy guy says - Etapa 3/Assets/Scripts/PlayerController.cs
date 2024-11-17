@@ -14,16 +14,18 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // Invertir la lógica de las teclas
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (GameManager.instance.juegoTerminado) return; // Detener inputs si el juego ha terminado
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            MostrarBandera(banderaBlanca); // Ahora la flecha izquierda muestra la bandera blanca
+            MostrarBandera(banderaRoja); // Flecha derecha muestra la bandera roja
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            MostrarBandera(banderaRoja); // Ahora la flecha derecha muestra la bandera roja
+            MostrarBandera(banderaBlanca); // Flecha izquierda muestra la bandera blanca
         }
     }
+
 
 
 
@@ -31,21 +33,23 @@ public class PlayerController : MonoBehaviour
     {
         banderaRoja.SetActive(false);
         banderaBlanca.SetActive(false);
-
         bandera.SetActive(true);
 
         if ((shyguy.banderaRoja.activeSelf && bandera != banderaRoja) ||
             (shyguy.banderaBlanca.activeSelf && bandera != banderaBlanca))
         {
             Debug.Log("Perdiste");
-
-            // Activar la gravedad y desactivar isKinematic para que el personaje caiga
             rb.isKinematic = false;
             rb.useGravity = true;
-            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse); // Agregar fuerza para iniciar la caída
+            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
 
-            // Reiniciar el juego después de 2 segundos
-            Invoke("ReiniciarJuego", 2f);
+            GameManager.instance.PerderVida(); // Llamar al GameManager para manejar la pérdida de vida
+        }
+        else
+        {
+            Debug.Log("Sigue en juego.");
+            GameManager.instance.IncrementarPuntuacion(10); // Aumentar la puntuación si acierta
+            shyguy.MostrarBanderaAleatoria();
         }
     }
 

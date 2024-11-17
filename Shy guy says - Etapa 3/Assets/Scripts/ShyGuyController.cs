@@ -8,10 +8,11 @@ public class ShyguyController : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("MostrarBanderaAleatoria", 2f, 3f);
+        // Mostrar una bandera al inicio del juego
+        MostrarBanderaAleatoria();
     }
 
-    void MostrarBanderaAleatoria()
+    public void MostrarBanderaAleatoria() // Asegúrate de que sea public
     {
         banderaRoja.SetActive(false);
         banderaBlanca.SetActive(false);
@@ -27,11 +28,12 @@ public class ShyguyController : MonoBehaviour
             banderaBlanca.SetActive(true);
         }
 
+        // Notificar a los AI para que reaccionen
         foreach (var ai in aiControllers)
         {
             if (ai != null)
             {
-                ai.ReaccionarABandera(); // Cambia esta línea para llamar al método correcto
+                ai.ReaccionarABandera();
             }
         }
     }
