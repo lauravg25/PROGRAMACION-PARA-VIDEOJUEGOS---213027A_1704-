@@ -28,12 +28,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        ActualizarPuntuacionUI();
-        if (pantallaFinJuego != null)
+        // Reasignar pantallaFinJuego si es necesario
+        if (pantallaFinJuego == null)
         {
-            pantallaFinJuego.SetActive(false); // Asegurarse de que esté desactivado al iniciar
+            pantallaFinJuego = GameObject.Find("PantallaFinJuego");
         }
+
+        ReiniciarEstado(); // Asegurarse de que el estado se reinicie
     }
+
 
     public void IncrementarPuntuacion(int puntos)
     {
@@ -60,17 +63,28 @@ public class GameManager : MonoBehaviour
 
     private void FinDelJuego()
     {
+        if (juegoTerminado) return; // Evitar múltiples llamadas
+
         juegoTerminado = true; // Marcar el juego como terminado
+        Debug.Log("Fin del juego llamado");
+
         if (pantallaFinJuego != null)
         {
             pantallaFinJuego.SetActive(true); // Mostrar el panel de fin de juego
         }
+        else
+        {
+            Debug.LogError("pantallaFinJuego no está asignado en el GameManager.");
+        }
+
         if (puntuacionFinalText != null)
         {
             puntuacionFinalText.text = "Puntuación final: " + puntuacion;
         }
+
         Time.timeScale = 0f; // Pausar el juego
     }
+
 
     private void ActualizarPuntuacionUI()
     {
@@ -83,10 +97,23 @@ public class GameManager : MonoBehaviour
     public void VolverAlMenuPrincipal()
     {
         Time.timeScale = 1f; // Reanudar el tiempo al volver al menú
-        SceneManager.LoadScene("MenuInicial");
-        // Reiniciar variables de estado
+        ReiniciarEstado(); // Reiniciar el estado del juego
+        SceneManager.LoadScene("MenuInicial"); // Cambiar a la escena del menú principal
+    }
+
+
+    public void ReiniciarEstado()
+    {
+        Time.timeScale = 1f; // Reanudar el tiempo si estaba pausado
         puntuacion = 0;
         vidas = 1;
         juegoTerminado = false;
+
+        if (pantallaFinJuego != null)
+        {
+            pantallaFinJuego.SetActive(false); // Ocultar la pantalla de fin de juego
+        }
     }
+
+
 }
