@@ -9,6 +9,7 @@ public class ShyguyController : MonoBehaviour
     private void Start()
     {
         // Mostrar una bandera al inicio del juego
+
         MostrarBanderaAleatoria();
     }
 
@@ -36,5 +37,8 @@ public class ShyguyController : MonoBehaviour
                 ai.ReaccionarABandera();
             }
         }
+
+        GameManager.instance.turnoShyGuy = true; // Activar el turno de los jugadores
+
     }
 }

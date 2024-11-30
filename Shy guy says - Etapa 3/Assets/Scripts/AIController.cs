@@ -16,6 +16,7 @@ public class AIController : MonoBehaviour
 
     private void Update()
     {
+        
         // Si el AI ha perdido, moverlo hacia abajo continuamente
         if (haPerdido)
         {
@@ -50,6 +51,7 @@ public class AIController : MonoBehaviour
             rb.isKinematic = true;
             rb.useGravity = false;
             haPerdido = true; // Activa el hundimiento
+            GameManager.instance.VerificarUltimoJugador();
         }
         else
         {

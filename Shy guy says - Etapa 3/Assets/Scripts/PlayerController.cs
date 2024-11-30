@@ -14,17 +14,20 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.juegoTerminado) return; // Detener inputs si el juego ha terminado
+        if (!GameManager.instance.juegoIniciado) return; // Bloquear lógica hasta que el juego inicie
+
+        if (GameManager.instance.juegoTerminado || !GameManager.instance.turnoShyGuy) return;
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            MostrarBandera(banderaRoja); // Flecha derecha muestra la bandera roja
+            MostrarBandera(banderaRoja);
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            MostrarBandera(banderaBlanca); // Flecha izquierda muestra la bandera blanca
+            MostrarBandera(banderaBlanca);
         }
     }
+
 
 
 
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
 
             GameManager.instance.PerderVida(); // Llamar al GameManager para manejar la pérdida de vida
+            GameManager.instance.VerificarUltimoJugador();
         }
         else
         {

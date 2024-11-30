@@ -1,6 +1,10 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections; // Necesario para usar IEnumerator
+using System.Collections.Generic; // Necesario para List<>
+
+
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +15,16 @@ public class GameManager : MonoBehaviour
     public GameObject pantallaFinJuego; // Panel de fin del juego
     public TMP_Text puntuacionFinalText; // Para mostrar la puntuación final
     public bool juegoTerminado = false; // Cambiar de private a public
+    public TMP_Text cuentaRegresivaText; // Texto para la cuenta regresiva
+    public bool turnoShyGuy = false; // Controla si es el turno de Shy Guy
+    public bool juegoIniciado = false; // Solo se activará tras la cuenta regresiva
+    public List<GameObject> jugadores = new List<GameObject>();
+
+
+
+
+
+
 
 
     private void Awake()
@@ -35,6 +49,8 @@ public class GameManager : MonoBehaviour
         }
 
         ReiniciarEstado(); // Asegurarse de que el estado se reinicie
+        StartCoroutine(MostrarCuentaRegresiva()); // Inicia la cuenta regresiva
+
     }
 
 
@@ -109,11 +125,104 @@ public class GameManager : MonoBehaviour
         vidas = 1;
         juegoTerminado = false;
 
+        // Actualizar referencias si son nulas
+        if (pantallaFinJuego == null)
+        {
+            pantallaFinJuego = GameObject.Find("PantallaFinJuego"); // Nombre exacto del objeto en la escena
+            if (pantallaFinJuego == null)
+            {
+                Debug.LogError("pantallaFinJuego no se encontró en la escena.");
+            }
+        }
+
+        if (cuentaRegresivaText == null)
+        {
+            cuentaRegresivaText = GameObject.Find("CuentaRegresivaText")?.GetComponent<TMP_Text>();
+            if (cuentaRegresivaText == null)
+            {
+                Debug.LogError("cuentaRegresivaText no se encontró en la escena.");
+            }
+        }
+
         if (pantallaFinJuego != null)
         {
             pantallaFinJuego.SetActive(false); // Ocultar la pantalla de fin de juego
         }
     }
+
+
+
+
+    public IEnumerator MostrarCuentaRegresiva()
+    {
+        cuentaRegresivaText.gameObject.SetActive(true);
+
+        for (int i = 3; i > 0; i--)
+        {
+            cuentaRegresivaText.text = i.ToString();
+            yield return new WaitForSeconds(1f);
+        }
+
+        cuentaRegresivaText.text = "¡YA!";
+        yield return new WaitForSeconds(1f);
+
+        cuentaRegresivaText.gameObject.SetActive(false);
+
+        // Activa el inicio del juego
+        juegoIniciado = true;
+
+        // Inicia el turno de Shy Guy
+        ShyguyController shyGuy = FindObjectOfType<ShyguyController>();
+        if (shyGuy != null)
+        {
+            shyGuy.MostrarBanderaAleatoria();
+        }
+    }
+
+
+
+    public void VerificarUltimoJugador()
+    {
+        int jugadoresActivos = 0;
+        GameObject ultimoJugador = null;
+
+        foreach (var jugador in jugadores)
+        {
+            if (jugador.activeSelf) // Cambiar según tu lógica para determinar si un jugador sigue activo
+            {
+                jugadoresActivos++;
+                ultimoJugador = jugador;
+            }
+        }
+
+        if (jugadoresActivos == 1)
+        {
+            juegoTerminado = true;
+            MostrarMensajeFin($"Ganó el jugador {ultimoJugador.name}");
+            Invoke(nameof(FinDelJuego), 1f); // Mostrar pantalla de fin tras un retraso
+        }
+    }
+
+
+    public TMP_Text mensajeFinJuegoText; // Asigna este campo desde el Inspector
+
+    public void MostrarMensajeFin(string mensaje)
+    {
+        if (mensajeFinJuegoText != null)
+        {
+            mensajeFinJuegoText.gameObject.SetActive(true); // Activa el texto en la pantalla
+            mensajeFinJuegoText.text = mensaje; // Establece el mensaje
+        }
+        else
+        {
+            Debug.LogError("mensajeFinJuegoText no está asignado en el GameManager.");
+        }
+    }
+
+
+
+
+
 
 
 }
