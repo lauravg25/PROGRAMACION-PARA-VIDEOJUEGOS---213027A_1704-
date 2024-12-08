@@ -6,8 +6,7 @@ public class PlayerController : MonoBehaviour
     public GameObject banderaBlanca;
     public ShyguyController shyguy; // Referencia al script ShyguyController
     private Rigidbody rb;
-    public string alias = " Tu Jugador"; // Alias del jugador
-
+    public string alias = "Jugador"; // Alias del jugador
 
     private void Start()
     {
@@ -37,10 +36,8 @@ public class PlayerController : MonoBehaviour
             Debug.LogError("GameManager.instance es nulo en PlayerController.");
             return;
         }
-
         if (!GameManager.instance.juegoIniciado) return; // Bloquear lógica hasta que el juego inicie
         if (GameManager.instance.juegoTerminado || !GameManager.instance.turnoShyGuy) return;
-
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             MostrarBandera(banderaRoja);
@@ -79,11 +76,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     void ReiniciarJuego()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 }
-

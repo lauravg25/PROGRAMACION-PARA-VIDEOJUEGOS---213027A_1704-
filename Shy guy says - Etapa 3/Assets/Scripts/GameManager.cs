@@ -204,7 +204,7 @@ public class GameManager : MonoBehaviour
         cuentaRegresivaText.text = "¡YA!";
         yield return new WaitForSeconds(1f);
         cuentaRegresivaText.gameObject.SetActive(false);
-        juegoIniciado = true;
+        juegoIniciado = true; // Marcar que el juego ha comenzado
         ShyguyController shyGuy = FindObjectOfType<ShyguyController>();
         if (shyGuy != null)
         {

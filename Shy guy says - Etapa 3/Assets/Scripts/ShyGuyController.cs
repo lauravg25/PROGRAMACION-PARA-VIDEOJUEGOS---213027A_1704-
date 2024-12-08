@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 
 public class ShyguyController : MonoBehaviour
@@ -10,17 +11,21 @@ public class ShyguyController : MonoBehaviour
     private void Start()
     {
         // Mostrar una bandera al inicio del juego
-
         MostrarBanderaAleatoria();
     }
 
-    public void MostrarBanderaAleatoria() // Asegúrate de que sea public
+    public void MostrarBanderaAleatoria()
     {
+        StartCoroutine(MostrarBanderaConRetraso());
+    }
+
+    private IEnumerator MostrarBanderaConRetraso()
+    {
+        yield return new WaitForSeconds(1f); // Esperar 1 segundo antes de mostrar la siguiente bandera
+
         banderaRoja.SetActive(false);
         banderaBlanca.SetActive(false);
-
         int bandera = Random.Range(0, 2);
-
         if (bandera == 0)
         {
             banderaRoja.SetActive(true);
@@ -40,6 +45,5 @@ public class ShyguyController : MonoBehaviour
         }
 
         GameManager.instance.turnoShyGuy = true; // Activar el turno de los jugadores
-
     }
 }
