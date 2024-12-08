@@ -10,12 +10,33 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        if (rb == null)
+        {
+            Debug.LogError("Rigidbody no encontrado en el objeto PlayerController.");
+        }
+        if (shyguy == null)
+        {
+            Debug.LogError("Referencia a ShyguyController no asignada en PlayerController.");
+        }
+        if (banderaRoja == null)
+        {
+            Debug.LogError("Referencia a banderaRoja no asignada en PlayerController.");
+        }
+        if (banderaBlanca == null)
+        {
+            Debug.LogError("Referencia a banderaBlanca no asignada en PlayerController.");
+        }
     }
 
     private void Update()
     {
-        if (!GameManager.instance.juegoIniciado) return; // Bloquear lógica hasta que el juego inicie
+        if (GameManager.instance == null)
+        {
+            Debug.LogError("GameManager.instance es nulo en PlayerController.");
+            return;
+        }
 
+        if (!GameManager.instance.juegoIniciado) return; // Bloquear lógica hasta que el juego inicie
         if (GameManager.instance.juegoTerminado || !GameManager.instance.turnoShyGuy) return;
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -28,24 +49,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-
-
-
     void MostrarBandera(GameObject bandera)
     {
+        if (banderaRoja == null || banderaBlanca == null || shyguy == null)
+        {
+            Debug.LogError("Una o más referencias no están asignadas en PlayerController.");
+            return;
+        }
+
         banderaRoja.SetActive(false);
         banderaBlanca.SetActive(false);
         bandera.SetActive(true);
 
-        if ((shyguy.banderaRoja.activeSelf && bandera != banderaRoja) ||
-            (shyguy.banderaBlanca.activeSelf && bandera != banderaBlanca))
+        if ((shyguy.banderaRoja.activeSelf && bandera != banderaRoja) || (shyguy.banderaBlanca.activeSelf && bandera != banderaBlanca))
         {
             Debug.Log("Perdiste");
             rb.isKinematic = false;
             rb.useGravity = true;
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
-
             GameManager.instance.PerderVida(); // Llamar al GameManager para manejar la pérdida de vida
             GameManager.instance.VerificarUltimoJugador();
         }
@@ -64,3 +85,4 @@ public class PlayerController : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 }
+
