@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     public TMP_Text mensajeFinJuegoText; // Asigna este campo desde el Inspector
     public GameObject mensajeEmergente; // Objeto del mensaje emergente
     public TMP_Text mensajeEmergenteText; // Texto del mensaje emergente
+    public List<GameObject> jugadoresPerdieron = new List<GameObject>();
+    public Color colorMensajePerdiste = Color.red; // Color para el mensaje de "Perdiste"
+    public Color colorMensajeGanaste = Color.green; // Color para el mensaje de "Ganaste"
+
 
     private void Awake()
     {
@@ -142,7 +146,7 @@ public class GameManager : MonoBehaviour
         vidas--;
         if (vidas <= 0)
         {
-            FinDelJuego(); // Llamar al método para mostrar la pantalla de fin
+            MostrarPantallaFinJuego($"Perdiste\nPuntuación final: {puntuacion}");
         }
     }
 
@@ -161,7 +165,7 @@ public class GameManager : MonoBehaviour
         }
         if (puntuacionFinalText != null)
         {
-            puntuacionFinalText.text = "Felicidades quedaste al ultimo tu Puntuación final: " + puntuacion;
+            puntuacionFinalText.text = "Puntuación final: " + puntuacion;
         }
         Time.timeScale = 0f;
     }
@@ -214,19 +218,19 @@ public class GameManager : MonoBehaviour
         GameObject ultimoJugador = null;
         foreach (var jugador in jugadores)
         {
-            if (jugador.activeSelf)
+            if (jugador.activeSelf && !jugadoresPerdieron.Contains(jugador))
             {
                 jugadoresActivos++;
                 ultimoJugador = jugador;
             }
         }
-        if (jugadoresActivos == 1)
+        if (jugadoresActivos == 1 && ultimoJugador != null)
         {
             juegoTerminado = true;
-            StartCoroutine(MostrarMensajeGanador(ultimoJugador.name));
+            string aliasGanador = ultimoJugador.GetComponent<PlayerController>()?.alias ?? ultimoJugador.GetComponent<AIController>()?.alias;
+            StartCoroutine(MostrarPantallaFinJuegoConRetraso($"El jugador ganador es: {aliasGanador}\nPuntuación final: {puntuacion}"));
         }
     }
-
     private IEnumerator MostrarMensajeGanador(string nombreJugador)
     {
         if (mensajeEmergente != null && mensajeEmergenteText != null)
@@ -236,7 +240,33 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(3f); // Mostrar el mensaje durante 3 segundos
             mensajeEmergente.SetActive(false);
         }
-        FinDelJuego(); // Mostrar pantalla de fin tras el mensaje emergente
+        MostrarPantallaFinJuego(nombreJugador);
+    }
+
+    private void MostrarPantallaFinJuego(string mensaje)
+    {
+        if (pantallaFinJuego != null)
+        {
+            pantallaFinJuego.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("pantallaFinJuego no está asignado en el GameManager.");
+        }
+        if (puntuacionFinalText != null)
+        {
+            puntuacionFinalText.text = mensaje;
+            // Cambiar el color del texto dependiendo del mensaje
+            if (mensaje.Contains("Perdiste"))
+            {
+                puntuacionFinalText.color = colorMensajePerdiste;
+            }
+            else if (mensaje.Contains("ganador"))
+            {
+                puntuacionFinalText.color = colorMensajeGanaste;
+            }
+        }
+        Time.timeScale = 0f;
     }
 
     public void MostrarMensajeFin(string mensaje)
@@ -252,5 +282,11 @@ public class GameManager : MonoBehaviour
         }
         mensajeFinJuegoText.gameObject.SetActive(true);
         mensajeFinJuegoText.text = mensaje;
+    }
+
+    private IEnumerator MostrarPantallaFinJuegoConRetraso(string mensaje)
+    {
+        yield return new WaitForSeconds(2f); // Esperar 2 segundos
+        MostrarPantallaFinJuego(mensaje);
     }
 }

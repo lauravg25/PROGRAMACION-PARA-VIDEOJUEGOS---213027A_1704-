@@ -396,6 +396,7 @@ MonoBehaviour:
   banderaRoja: {fileID: 829648956}
   banderaBlanca: {fileID: 318950250}
   shyguy: {fileID: 1115637964}
+  alias: ' Tu Jugador'
 --- !u!1 &114160350
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +788,7 @@ MonoBehaviour:
   banderaRoja: {fileID: 987506289}
   banderaBlanca: {fileID: 1703194169}
   shyguy: {fileID: 1115637964}
+  alias: AI
 --- !u!1 &245950196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,6 +1293,7 @@ MonoBehaviour:
   banderaRoja: {fileID: 1479153162}
   banderaBlanca: {fileID: 1075359244}
   shyguy: {fileID: 1115637964}
+  alias: AI
 --- !u!114 &523956099 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4203996998054557805, guid: 50e7da960c0484546ad0eb8144b3a127, type: 3}
@@ -1454,6 +1457,7 @@ MonoBehaviour:
   banderaRoja: {fileID: 425253883}
   banderaBlanca: {fileID: 998108096}
   shyguy: {fileID: 1115637964}
+  alias: AI
 --- !u!114 &655992764 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7886912560658857675, guid: ea89bd786fdcc6141acea2658a743bef, type: 3}
@@ -2948,6 +2952,9 @@ MonoBehaviour:
   mensajeFinJuegoText: {fileID: 349802884}
   mensajeEmergente: {fileID: 1097787569}
   mensajeEmergenteText: {fileID: 523956099}
+  jugadoresPerdieron: []
+  colorMensajePerdiste: {r: 1, g: 0, b: 0, a: 1}
+  colorMensajeGanaste: {r: 0, g: 1, b: 0, a: 1}
 --- !u!4 &1419172243
 Transform:
   m_ObjectHideFlags: 0
@@ -3594,6 +3601,18 @@ PrefabInstance:
       value: Fin del juego el ultimo jugador a quedado en pie!
       objectReference: {fileID: 0}
     - target: {fileID: 4130645682742144153, guid: ea89bd786fdcc6141acea2658a743bef, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130645682742144153, guid: ea89bd786fdcc6141acea2658a743bef, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130645682742144153, guid: ea89bd786fdcc6141acea2658a743bef, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130645682742144153, guid: ea89bd786fdcc6141acea2658a743bef, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
@@ -3776,6 +3795,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasMensajeEmergente
       objectReference: {fileID: 0}
+    - target: {fileID: 2365146854176904317, guid: 50e7da960c0484546ad0eb8144b3a127, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2818935792319253531, guid: 50e7da960c0484546ad0eb8144b3a127, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3855,6 +3878,22 @@ PrefabInstance:
     - target: {fileID: 2818935792319253531, guid: 50e7da960c0484546ad0eb8144b3a127, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203996998054557805, guid: 50e7da960c0484546ad0eb8144b3a127, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203996998054557805, guid: 50e7da960c0484546ad0eb8144b3a127, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.14530519
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203996998054557805, guid: 50e7da960c0484546ad0eb8144b3a127, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.8962264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203996998054557805, guid: 50e7da960c0484546ad0eb8144b3a127, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.13105197
       objectReference: {fileID: 0}
     - target: {fileID: 9052516489547803665, guid: 50e7da960c0484546ad0eb8144b3a127, type: 3}
       propertyPath: m_IsActive

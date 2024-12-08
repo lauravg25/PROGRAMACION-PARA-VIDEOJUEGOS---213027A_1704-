@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     public GameObject banderaBlanca;
     public ShyguyController shyguy; // Referencia al script ShyguyController
     private Rigidbody rb;
+    public string alias = " Tu Jugador"; // Alias del jugador
+
 
     private void Start()
     {
@@ -56,11 +58,9 @@ public class PlayerController : MonoBehaviour
             Debug.LogError("Una o más referencias no están asignadas en PlayerController.");
             return;
         }
-
         banderaRoja.SetActive(false);
         banderaBlanca.SetActive(false);
         bandera.SetActive(true);
-
         if ((shyguy.banderaRoja.activeSelf && bandera != banderaRoja) || (shyguy.banderaBlanca.activeSelf && bandera != banderaBlanca))
         {
             Debug.Log("Perdiste");
@@ -68,7 +68,8 @@ public class PlayerController : MonoBehaviour
             rb.useGravity = true;
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
             GameManager.instance.PerderVida(); // Llamar al GameManager para manejar la pérdida de vida
-            GameManager.instance.VerificarUltimoJugador();
+            GameManager.instance.jugadoresPerdieron.Add(gameObject); // Agregar a la lista de jugadores que han perdido
+            GameManager.instance.VerificarUltimoJugador(); // Verificar si es el último jugador
         }
         else
         {
